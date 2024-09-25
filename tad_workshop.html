@@ -7515,7 +7515,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Text-as-Data:-A-Practical-Introduction-in-Python">Text as Data: A Practical Introduction in Python<a class="anchor-link" href="#Text-as-Data:-A-Practical-Introduction-in-Python">¶</a></h1><p><strong>Author</strong>: June Yang, CSDE and eScience Institute</p>
+<h1 id="Introduction-to-Text-as-Data">Introduction to Text as Data<a class="anchor-link" href="#Introduction-to-Text-as-Data">¶</a></h1><p><strong>Author</strong>: June Yang, CSDE and eScience Institute</p>
 <p><strong>Date</strong>: Sep 2024</p>
 <p>Welcome to this workshop on <strong>Text as Data</strong>! In this session, we'll explore key concepts from four critical areas:</p>
 <ol>
@@ -7539,13 +7539,6 @@ a.anchor-link {
 <hr/>
 <h2 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">¶</a></h2><ol>
 <li><a href="#Resources-and-Materials">Resources and Materials</a></li>
-<li><a href="#Retrieving-Text-Data-Using-APIs">Retrieving Text Data Using APIs</a><ul>
-<li><a href="#Overview">Overview</a></li>
-<li><a href="#Understanding-APIs">Understanding APIs</a></li>
-<li><a href="#Accessing-APIs-in-Python">Accessing APIs in Python</a></li>
-<li><a href="#Coding-Example">Coding Example</a></li>
-</ul>
-</li>
 <li><a href="#Selection-and-Representation">Selection and Representation</a><ul>
 <li><a href="#Overview-1">Overview</a></li>
 <li><a href="#Understanding-Text-Data">Understanding Text Data</a></li>
@@ -7571,7 +7564,13 @@ a.anchor-link {
 <li><a href="#Coding-Example-3">Coding Example</a></li>
 </ul>
 </li>
-<li><a href="#Conclusion">Conclusion</a></li>
+<li><a href="#Retrieving-Text-Data-Using-APIs">Appendix: Retrieving Text Data Using APIs</a><ul>
+<li><a href="#Overview">Overview</a></li>
+<li><a href="#Understanding-APIs">Understanding APIs</a></li>
+<li><a href="#Accessing-APIs-in-Python">Accessing APIs in Python</a></li>
+<li><a href="#Coding-Example">Coding Example</a></li>
+</ul>
+</li>
 <li><a href="#Additional-Resources">Additional Resources</a></li>
 </ol>
 </div>
@@ -7613,662 +7612,6 @@ a.anchor-link {
 </li>
 </ul>
 <p>Full references and additional resources could be found in the <a href="#References">References</a> at the bottom of this tutorial.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=j0k1l2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<hr/>
-<h2 id="Appendix:-Retrieving-Text-Data-Using-APIs">Appendix: Retrieving Text Data Using APIs<a class="anchor-link" href="#Appendix:-Retrieving-Text-Data-Using-APIs">¶</a></h2><h3 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h3><p>Before we can analyze text data, we need to <strong>retrieve</strong> it. One common way to collect text data is through <strong>Application Programming Interfaces (APIs)</strong>. APIs allow you to programmatically access data from various platforms and services.</p>
-<p>Key concepts:</p>
-<ul>
-<li><strong>Understanding APIs</strong>: What they are and how they work.</li>
-<li><strong>Accessing APIs in Python</strong>: Using libraries to make API requests.</li>
-<li><strong>Handling API Data</strong>: Processing and storing the retrieved data.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=m3n4o5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Understanding-APIs">Understanding APIs<a class="anchor-link" href="#Understanding-APIs">¶</a></h3><p><strong>What is an API?</strong></p>
-<ul>
-<li>An <strong>API (Application Programming Interface)</strong> is a set of rules and protocols that allows different software applications to communicate with each other.</li>
-<li>APIs enable you to access data or functionality from another application or service.</li>
-</ul>
-<p><strong>Why Use APIs for Text Data?</strong></p>
-<ul>
-<li><strong>Access Real-Time Data</strong>: APIs can provide up-to-date information.</li>
-<li><strong>Automate Data Retrieval</strong>: Programmatically collect data without manual intervention.</li>
-<li><strong>Customize Data Queries</strong>: Fetch specific data relevant to your research.</li>
-</ul>
-<p><strong>Common Text Data APIs</strong></p>
-<ul>
-<li><strong>News APIs</strong>: Access news articles from various sources.</li>
-<li><strong>Social Media APIs</strong>: Retrieve posts from platforms like Twitter, Reddit, or Facebook.</li>
-<li><strong>Open Data APIs</strong>: Government or organizational data repositories.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=p6q7r8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Accessing-APIs-in-Python">Accessing APIs in Python<a class="anchor-link" href="#Accessing-APIs-in-Python">¶</a></h3><p><strong>HTTP Requests</strong></p>
-<ul>
-<li>APIs often use HTTP requests to send and receive data.</li>
-<li>Common HTTP methods: <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>.</li>
-</ul>
-<p><strong>API Authentication</strong></p>
-<ul>
-<li>Some APIs require an <strong>API key</strong> or <strong>OAuth</strong> for authentication.</li>
-<li>Always keep your API keys secure and never share them publicly.</li>
-</ul>
-<p><strong>Python Libraries for API Access</strong></p>
-<ul>
-<li><code>requests</code>: A simple HTTP library for Python.</li>
-<li><code>json</code>: To parse JSON responses.</li>
-<li>Specific libraries: Some APIs have dedicated Python wrappers (e.g., <code>tweepy</code> for Twitter).</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=s9t0u1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<hr/>
-<h3 id="Coding-Example">Coding Example<a class="anchor-link" href="#Coding-Example">¶</a></h3><p>We'll walk through an example of accessing a News API to retrieve recent articles on a specific topic.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=v2w3x4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Import-Libraries">Import Libraries<a class="anchor-link" href="#Import-Libraries">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=y5z6a7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b8c9d0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Setting-Up-API-Access">Setting Up API Access<a class="anchor-link" href="#Setting-Up-API-Access">¶</a></h4><p><strong>Choose an API</strong></p>
-<p>For this example, we'll use the <a href="https://newsapi.org/">NewsAPI</a>, which allows us to access news articles from various sources.</p>
-<p><strong>Sign Up and Get an API Key</strong></p>
-<ol>
-<li>Visit <a href="https://newsapi.org/register">NewsAPI.org</a>.</li>
-<li>Sign up for a free account.</li>
-<li>Obtain your API key from the dashboard.</li>
-</ol>
-<p><strong>Store Your API Key Securely</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e1f2g3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Store your API key as a string</span>
-<span class="n">api_key</span> <span class="o">=</span> <span class="s1">'YOUR_NEWSAPI_KEY_HERE'</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=h4i5j6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<blockquote>
-<p><strong>Important</strong>: Replace <code>'YOUR_NEWSAPI_KEY_HERE'</code> with your actual API key. Keep your API key private and do not share it.</p>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=k7l8m9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Retrieving-Data-from-an-API">Retrieving Data from an API<a class="anchor-link" href="#Retrieving-Data-from-an-API">¶</a></h4><p><strong>Define the API Endpoint and Parameters</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=n0o1p2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define the endpoint</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://newsapi.org/v2/everything'</span>
-
-<span class="c1"># Define the parameters</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'q'</span><span class="p">:</span> <span class="s1">'climate change'</span><span class="p">,</span>  <span class="c1"># Search query</span>
-    <span class="s1">'pageSize'</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>        <span class="c1"># Number of results per page</span>
-    <span class="s1">'apiKey'</span><span class="p">:</span> <span class="n">api_key</span>       <span class="c1"># Your API key</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=q3r4s5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Make the API Request</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=t6u7v8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Make the request</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">)</span>
-
-<span class="c1"># Check the status code</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Status Code: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Status Code: 401
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=w9x0y1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li><strong>Status Code 200</strong>: Success</li>
-<li>Other codes indicate issues (e.g., 401 Unauthorized, 429 Too Many Requests)</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=z2a3b4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Parse the JSON Response</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c5d6e7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Parse the JSON content</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-<span class="c1"># Check if there are articles</span>
-<span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'ok'</span><span class="p">:</span>
-    <span class="n">articles</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of articles retrieved: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">articles</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Failed to retrieve articles"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Failed to retrieve articles
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f8g9h0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Processing-and-Saving-the-Data">Processing and Saving the Data<a class="anchor-link" href="#Processing-and-Saving-the-Data">¶</a></h4><p><strong>Extract Relevant Information</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=i1j2k3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a list to store article information</span>
-<span class="n">article_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
-    <span class="n">article_info</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'source'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'source'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">],</span>
-        <span class="s1">'author'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'author'</span><span class="p">],</span>
-        <span class="s1">'title'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'title'</span><span class="p">],</span>
-        <span class="s1">'description'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'description'</span><span class="p">],</span>
-        <span class="s1">'content'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'content'</span><span class="p">],</span>
-        <span class="s1">'publishedAt'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'publishedAt'</span><span class="p">],</span>
-        <span class="s1">'url'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span>
-    <span class="p">}</span>
-    <span class="n">article_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article_info</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [7]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)"># Create a list to store article information</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> article_list <span style="color: rgb(98,98,98)">=</span> []
-<span class="ansi-green-fg">----&gt; 4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> article <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span class="ansi-yellow-bg">articles</span>:
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     article_info <span style="color: rgb(98,98,98)">=</span> {
-<span class="ansi-green-intense-fg ansi-bold">      6</span>         <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">source</span><span style="color: rgb(175,0,0)">'</span>: article[<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">source</span><span style="color: rgb(175,0,0)">'</span>][<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">'</span>],
-<span class="ansi-green-intense-fg ansi-bold">      7</span>         <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">author</span><span style="color: rgb(175,0,0)">'</span>: article[<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">author</span><span style="color: rgb(175,0,0)">'</span>],
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span>         <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">url</span><span style="color: rgb(175,0,0)">'</span>: article[<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">url</span><span style="color: rgb(175,0,0)">'</span>]
-<span class="ansi-green-intense-fg ansi-bold">     13</span>     }
-<span class="ansi-green-intense-fg ansi-bold">     14</span>     article_list<span style="color: rgb(98,98,98)">.</span>append(article_info)
-
-<span class="ansi-red-fg">NameError</span>: name 'articles' is not defined</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=l4m5n6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Create a DataFrame</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=o7p8q9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Convert the list to a DataFrame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">article_list</span><span class="p">)</span>
-
-<span class="c1"># Display the first few entries</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=r0s1t2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Handle Missing Data</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=u3v4w5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Check for missing values</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-
-<span class="c1"># Optionally, drop rows with missing content</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'content'</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=x6y7z8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Save the Data</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a9b0c1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Save to CSV</span>
-<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'news_articles.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># Save to JSON</span>
-<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">'news_articles.json'</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">'records'</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d2e3f4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Display Sample Articles</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=g5h6i7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display titles and content</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Article </span><span class="si">{</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Content: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]</span><span class="si">}</span>
-<span class="s2">")</span>
-    <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># Display only the first 3 articles</span>
-        <span class="k">break</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=j8k9l0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<hr/>
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h3><p><strong>Try it yourself</strong>:</p>
-<ol>
-<li><strong>Change the Query</strong>: Modify the search query to a topic of your interest (e.g., "artificial intelligence").</li>
-<li><strong>Explore Other Parameters</strong>: Adjust parameters like <code>from</code>, <code>to</code>, <code>language</code>, or <code>sources</code>.<ul>
-<li>Example: Add <code>'language': 'en'</code> to fetch only English articles.</li>
-</ul>
-</li>
-<li><strong>Handle Pagination</strong>: Retrieve more articles by handling pagination.<ul>
-<li>Use the <code>page</code> parameter to navigate through pages.</li>
-</ul>
-</li>
-<li><strong>Rate Limiting</strong>: Be mindful of the API's rate limits to avoid being blocked.</li>
-</ol>
-<p><strong>Note</strong>: Always refer to the API's documentation for available parameters and usage guidelines.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=m1n2o3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<hr/>
-<h3 id="Additional-Example:-Using-Reddit-API-with-PRAW">Additional Example: Using Reddit API with <code>PRAW</code><a class="anchor-link" href="#Additional-Example:-Using-Reddit-API-with-PRAW">¶</a></h3><p><strong>Install and Import PRAW</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=p4q5r6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Install PRAW (Python Reddit API Wrapper)</span>
-<span class="o">!</span>pip install praw
-
-<span class="kn">import</span> <span class="nn">praw</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=s7t8u9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Set Up Reddit API Access</strong></p>
-<ol>
-<li>Create a Reddit account if you don't have one.</li>
-<li>Go to <a href="https://www.reddit.com/prefs/apps">Reddit Apps</a> to create an app.</li>
-<li>Choose <strong>script</strong> and fill in the required details.</li>
-<li>Obtain your <code>client_id</code>, <code>client_secret</code>, and <code>user_agent</code>.</li>
-</ol>
-<p><strong>Initialize Reddit Instance</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=v0w1x2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize Reddit instance</span>
-<span class="n">reddit</span> <span class="o">=</span> <span class="n">praw</span><span class="o">.</span><span class="n">Reddit</span><span class="p">(</span>
-    <span class="n">client_id</span><span class="o">=</span><span class="s1">'YOUR_CLIENT_ID'</span><span class="p">,</span>
-    <span class="n">client_secret</span><span class="o">=</span><span class="s1">'YOUR_CLIENT_SECRET'</span><span class="p">,</span>
-    <span class="n">user_agent</span><span class="o">=</span><span class="s1">'YOUR_USER_AGENT'</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=y3z4a5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<blockquote>
-<p><strong>Important</strong>: Replace <code>'YOUR_CLIENT_ID'</code>, <code>'YOUR_CLIENT_SECRET'</code>, and <code>'YOUR_USER_AGENT'</code> with your actual credentials.</p>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6c7d8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Retrieve Posts from a Subreddit</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e9f0g1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Choose a subreddit</span>
-<span class="n">subreddit_name</span> <span class="o">=</span> <span class="s1">'datascience'</span>
-
-<span class="c1"># Get the subreddit</span>
-<span class="n">subreddit</span> <span class="o">=</span> <span class="n">reddit</span><span class="o">.</span><span class="n">subreddit</span><span class="p">(</span><span class="n">subreddit_name</span><span class="p">)</span>
-
-<span class="c1"># Fetch the top posts</span>
-<span class="n">top_posts</span> <span class="o">=</span> <span class="n">subreddit</span><span class="o">.</span><span class="n">top</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="c1"># Store post information</span>
-<span class="n">posts</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">top_posts</span><span class="p">:</span>
-    <span class="n">post_info</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'title'</span><span class="p">:</span> <span class="n">post</span><span class="o">.</span><span class="n">title</span><span class="p">,</span>
-        <span class="s1">'author'</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">post</span><span class="o">.</span><span class="n">author</span><span class="p">),</span>
-        <span class="s1">'score'</span><span class="p">:</span> <span class="n">post</span><span class="o">.</span><span class="n">score</span><span class="p">,</span>
-        <span class="s1">'url'</span><span class="p">:</span> <span class="n">post</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
-        <span class="s1">'num_comments'</span><span class="p">:</span> <span class="n">post</span><span class="o">.</span><span class="n">num_comments</span><span class="p">,</span>
-        <span class="s1">'created'</span><span class="p">:</span> <span class="n">post</span><span class="o">.</span><span class="n">created_utc</span><span class="p">,</span>
-        <span class="s1">'selftext'</span><span class="p">:</span> <span class="n">post</span><span class="o">.</span><span class="n">selftext</span>
-    <span class="p">}</span>
-    <span class="n">posts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">post_info</span><span class="p">)</span>
-
-<span class="c1"># Convert to DataFrame</span>
-<span class="n">df_reddit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">posts</span><span class="p">)</span>
-<span class="n">df_reddit</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=h2i3j4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Save the Data</strong></p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=k5l6m7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Save to CSV</span>
-<span class="n">df_reddit</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'reddit_posts.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -9631,66 +8974,17 @@ $$P(w_{d,n} | z_{d,n}, \beta) = \text{Multinomial}(w_{d,n} | \beta_{z_{d,n}})$$<
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [6]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)"># movie_reviews data from the previous section</span>
+<span class="ansi-green-fg">----&gt; 2</span> <span class="ansi-yellow-bg">df</span><span style="color: rgb(98,98,98)">.</span>head()
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Review</th>
-<th>Label</th>
-<th>Processed_Review</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>plot : two teen couples go to a church party ,...</td>
-<td>neg</td>
-<td>plot two teen couple go church party drink dri...</td>
-</tr>
-<tr>
-<th>1</th>
-<td>the happy bastard's quick movie review \ndamn ...</td>
-<td>neg</td>
-<td>happy bastard quick movie review damn bug got ...</td>
-</tr>
-<tr>
-<th>2</th>
-<td>it is movies like these that make a jaded movi...</td>
-<td>neg</td>
-<td>movie like make jaded movie viewer thankful in...</td>
-</tr>
-<tr>
-<th>3</th>
-<td>" quest for camelot " is warner bros . ' firs...</td>
-<td>neg</td>
-<td>quest camelot warner bros first attempt steal ...</td>
-</tr>
-<tr>
-<th>4</th>
-<td>synopsis : a mentally unstable man undergoing ...</td>
-<td>neg</td>
-<td>synopsis mentally unstable man undergoing psyc...</td>
-</tr>
-</tbody>
-</table>
-</div>
+<span class="ansi-red-fg">NameError</span>: name 'df' is not defined</pre>
 </div>
 </div>
 </div>
@@ -10568,6 +9862,550 @@ weighted avg       0.79      0.79      0.79       427
 <p>GPT-4o is designed to be a general-purpose language model that can understand and generate human-like text in a wide range of languages and domains. It is pre-trained on a massive corpus of text data and has been fine-tuned for a variety of tasks, including language modeling, text classification, and question answering.</p>
 <p>One of the key features of GPT-4o is its ability to generate highly realistic and context-sensitive text. It can be used for a wide range of applications, including content creation, data analysis, and natural language processing tasks.</p>
 <p>GPT-4o is a powerful tool for language understanding and generation, and it has been used in a wide range of applications, including search, chatbots, and content recommendation systems.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c8fb2aaa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Appendix:-Retrieving-Text-Data-Using-APIs">Appendix: Retrieving Text Data Using APIs<a class="anchor-link" href="#Appendix:-Retrieving-Text-Data-Using-APIs">¶</a></h2><h3 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h3><p>Before we can analyze text data, we need to <strong>retrieve</strong> it. One common way to collect text data is through <strong>Application Programming Interfaces (APIs)</strong>. APIs allow you to programmatically access data from various platforms and services.</p>
+<p>Key concepts:</p>
+<ul>
+<li><strong>Understanding APIs</strong>: What they are and how they work.</li>
+<li><strong>Accessing APIs in Python</strong>: Using libraries to make API requests.</li>
+<li><strong>Handling API Data</strong>: Processing and storing the retrieved data.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ce61d655">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Understanding-APIs">Understanding APIs<a class="anchor-link" href="#Understanding-APIs">¶</a></h3><p><strong>What is an API?</strong></p>
+<ul>
+<li>An <strong>API (Application Programming Interface)</strong> is a set of rules and protocols that allows different software applications to communicate with each other.</li>
+<li>APIs enable you to access data or functionality from another application or service.</li>
+</ul>
+<p><strong>Why Use APIs for Text Data?</strong></p>
+<ul>
+<li><strong>Access Real-Time Data</strong>: APIs can provide up-to-date information.</li>
+<li><strong>Automate Data Retrieval</strong>: Programmatically collect data without manual intervention.</li>
+<li><strong>Customize Data Queries</strong>: Fetch specific data relevant to your research.</li>
+</ul>
+<p><strong>Common Text Data APIs</strong></p>
+<ul>
+<li><strong>News APIs</strong>: Access news articles from various sources.</li>
+<li><strong>Social Media APIs</strong>: Retrieve posts from platforms like Twitter, Reddit, or Facebook.</li>
+<li><strong>Open Data APIs</strong>: Government or organizational data repositories.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7e6b5666">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Accessing-APIs-in-Python">Accessing APIs in Python<a class="anchor-link" href="#Accessing-APIs-in-Python">¶</a></h3><p><strong>HTTP Requests</strong></p>
+<ul>
+<li>APIs often use HTTP requests to send and receive data.</li>
+<li>Common HTTP methods: <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>.</li>
+</ul>
+<p><strong>API Authentication</strong></p>
+<ul>
+<li>Some APIs require an <strong>API key</strong> or <strong>OAuth</strong> for authentication.</li>
+<li>Always keep your API keys secure and never share them publicly.</li>
+</ul>
+<p><strong>Python Libraries for API Access</strong></p>
+<ul>
+<li><code>requests</code>: A simple HTTP library for Python.</li>
+<li><code>json</code>: To parse JSON responses.</li>
+<li>Specific libraries: Some APIs have dedicated Python wrappers (e.g., <code>tweepy</code> for Twitter).</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d280d782">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h3 id="Coding-Example">Coding Example<a class="anchor-link" href="#Coding-Example">¶</a></h3><p>We'll walk through an example of accessing a News API to retrieve recent articles on a specific topic.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9db7f447">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Import-Libraries">Import Libraries<a class="anchor-link" href="#Import-Libraries">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=98ffa1fc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=82e5f090">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Setting-Up-API-Access">Setting Up API Access<a class="anchor-link" href="#Setting-Up-API-Access">¶</a></h4><p><strong>Choose an API</strong></p>
+<p>For this example, we'll use the <a href="https://newsapi.org/">NewsAPI</a>, which allows us to access news articles from various sources.</p>
+<p><strong>Sign Up and Get an API Key</strong></p>
+<ol>
+<li>Visit <a href="https://newsapi.org/register">NewsAPI.org</a>.</li>
+<li>Sign up for a free account.</li>
+<li>Obtain your API key from the dashboard.</li>
+</ol>
+<p><strong>Store Your API Key Securely</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=339b6add">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Store your API key as a string</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="s1">'YOUR_NEWSAPI_KEY_HERE'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6973b049">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p><strong>Important</strong>: Replace <code>'YOUR_NEWSAPI_KEY_HERE'</code> with your actual API key. Keep your API key private and do not share it.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9a720f5a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Retrieving-Data-from-an-API">Retrieving Data from an API<a class="anchor-link" href="#Retrieving-Data-from-an-API">¶</a></h4><p><strong>Define the API Endpoint and Parameters</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=00e49d3e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define the endpoint</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://newsapi.org/v2/everything'</span>
+
+<span class="c1"># Define the parameters</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'q'</span><span class="p">:</span> <span class="s1">'climate change'</span><span class="p">,</span>  <span class="c1"># Search query</span>
+    <span class="s1">'pageSize'</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>        <span class="c1"># Number of results per page</span>
+    <span class="s1">'apiKey'</span><span class="p">:</span> <span class="n">api_key</span>       <span class="c1"># Your API key</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f958eb87">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Make the API Request</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2357050b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Make the request</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">)</span>
+
+<span class="c1"># Check the status code</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Status Code: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Status Code: 401
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=95cfef4d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Status Code 200</strong>: Success</li>
+<li>Other codes indicate issues (e.g., 401 Unauthorized, 429 Too Many Requests)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=274ff085">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Parse the JSON Response</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=807f8670">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Parse the JSON content</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="c1"># Check if there are articles</span>
+<span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'ok'</span><span class="p">:</span>
+    <span class="n">articles</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of articles retrieved: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">articles</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Failed to retrieve articles"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Failed to retrieve articles
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f948ffb0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Processing-and-Saving-the-Data">Processing and Saving the Data<a class="anchor-link" href="#Processing-and-Saving-the-Data">¶</a></h4><p><strong>Extract Relevant Information</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fcd78e0e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a list to store article information</span>
+<span class="n">article_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
+    <span class="n">article_info</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'source'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'source'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">],</span>
+        <span class="s1">'author'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'author'</span><span class="p">],</span>
+        <span class="s1">'title'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'title'</span><span class="p">],</span>
+        <span class="s1">'description'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'description'</span><span class="p">],</span>
+        <span class="s1">'content'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'content'</span><span class="p">],</span>
+        <span class="s1">'publishedAt'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'publishedAt'</span><span class="p">],</span>
+        <span class="s1">'url'</span><span class="p">:</span> <span class="n">article</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">article_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article_info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [8]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)"># Create a list to store article information</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> article_list <span style="color: rgb(98,98,98)">=</span> []
+<span class="ansi-green-fg">----&gt; 4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> article <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span class="ansi-yellow-bg">articles</span>:
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     article_info <span style="color: rgb(98,98,98)">=</span> {
+<span class="ansi-green-intense-fg ansi-bold">      6</span>         <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">source</span><span style="color: rgb(175,0,0)">'</span>: article[<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">source</span><span style="color: rgb(175,0,0)">'</span>][<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">'</span>],
+<span class="ansi-green-intense-fg ansi-bold">      7</span>         <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">author</span><span style="color: rgb(175,0,0)">'</span>: article[<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">author</span><span style="color: rgb(175,0,0)">'</span>],
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span>         <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">url</span><span style="color: rgb(175,0,0)">'</span>: article[<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">url</span><span style="color: rgb(175,0,0)">'</span>]
+<span class="ansi-green-intense-fg ansi-bold">     13</span>     }
+<span class="ansi-green-intense-fg ansi-bold">     14</span>     article_list<span style="color: rgb(98,98,98)">.</span>append(article_info)
+
+<span class="ansi-red-fg">NameError</span>: name 'articles' is not defined</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f156e584">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Create a DataFrame</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7239be3b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Convert the list to a DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">article_list</span><span class="p">)</span>
+
+<span class="c1"># Display the first few entries</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=754e9566">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Handle Missing Data</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=645c2349">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Check for missing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="c1"># Optionally, drop rows with missing content</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'content'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Series([], dtype: float64)
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [10]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 5&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(df<span style="color: rgb(98,98,98)">.</span>isnull()<span style="color: rgb(98,98,98)">.</span>sum())
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(95,135,135)"># Optionally, drop rows with missing content</span>
+<span class="ansi-green-fg">----&gt; 5</span> df <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">dropna</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">subset</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">content</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/anaconda3/envs/nlp/lib/python3.8/site-packages/pandas/core/frame.py:6407</span>, in <span class="ansi-cyan-fg">DataFrame.dropna</span><span class="ansi-blue-fg">(self, axis, how, thresh, subset, inplace, ignore_index)</span>
+<span class="ansi-green-intense-fg ansi-bold">   6405</span>     check <span style="color: rgb(98,98,98)">=</span> indices <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">1</span>
+<span class="ansi-green-intense-fg ansi-bold">   6406</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> check<span style="color: rgb(98,98,98)">.</span>any():
+<span class="ansi-green-fg">-&gt; 6407</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">KeyError</span>(np<span style="color: rgb(98,98,98)">.</span>array(subset)[check]<span style="color: rgb(98,98,98)">.</span>tolist())
+<span class="ansi-green-intense-fg ansi-bold">   6408</span>     agg_obj <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>take(indices, axis<span style="color: rgb(98,98,98)">=</span>agg_axis)
+<span class="ansi-green-intense-fg ansi-bold">   6410</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> thresh <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> no_default:
+
+<span class="ansi-red-fg">KeyError</span>: ['content']</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1d1dbadf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Save the Data</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fb669b85">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Save to CSV</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'news_articles.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Save to JSON</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">'news_articles.json'</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">'records'</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7c3a8d31">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Display Sample Articles</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c51e1033">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display titles and content</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Article </span><span class="si">{</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Content: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">'content'</span><span class="p">]</span><span class="si">}</span>
+<span class="s2">")</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># Display only the first 3 articles</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
