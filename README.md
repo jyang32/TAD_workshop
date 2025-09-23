@@ -1,5 +1,5 @@
 # TAD workshop
-This repository contains the Text as Data workshop in Fall 2024. 
+This repository contains the Text as Data workshop in Fall 2025. 
 
 **How to use this repository**
 1. Clone the repository to your local machine.
