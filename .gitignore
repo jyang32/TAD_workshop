@@ -3,3 +3,5 @@
 *.csv
 *.json
 *.docx
+data/*
+plot/*
